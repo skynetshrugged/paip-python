@@ -1,4 +1,4 @@
-from paip.gps import gps
+from gps import gps
 
 problem = {
     "start": ["at door", "on floor", "has ball", "hungry", "chair at door"],
@@ -48,7 +48,7 @@ def main():
     finish = problem['finish']
     ops = problem['ops']
     for action in gps(start, finish, ops):
-        print action
+        print (action)
 
 if __name__ == '__main__':
     main()
