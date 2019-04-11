@@ -1,6 +1,6 @@
 import json
 import sys
-from paip import eliza
+import eliza
 
 rules = {
     "?*x hello ?*y": [
@@ -204,10 +204,10 @@ def main():
     rules_list = []
     for pattern, transforms in rules.items():
         # Remove the punctuation from the pattern to simplify matching.
-        pattern = eliza.remove_punct(str(pattern.upper())) # kill unicode
+        #pattern = eliza.translate(str(pattern.upper())) # kill unicode
         transforms = [str(t).upper() for t in transforms]
         rules_list.append((pattern, transforms))
-    eliza.interact('ELIZA> ', rules_list, map(str.upper, default_responses))
+    #eliza.interact('ELIZA> ', rules_list, map(str.upper, default_responses))
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()

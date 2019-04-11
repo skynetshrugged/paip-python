@@ -45,7 +45,7 @@ def interact(prompt, rules, default_responses):
                 continue
         except:
             break
-        print respond(rules, input, default_responses)
+        print (respond(rules, input, default_responses))
 
 
 def respond(rules, input, default_responses):
